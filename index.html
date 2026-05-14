@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa para Niños - Lima 🗺️</title>
+  <meta name="description" content="Mapa interactivo con parques infantiles, museos y actividades para niños en Lima, Perú." />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <h1>🎈 Mapa para Niños · Lima</h1>
+      <p class="subtitle">Parques, museos y actividades familiares en la ciudad</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="filters">
+        <h2>Filtros</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="todos">
+            <span class="dot dot-todos"></span> Todos
+          </button>
+          <button class="filter-btn" data-filter="parque">
+            <span class="dot dot-parque"></span> Parques
+          </button>
+          <button class="filter-btn" data-filter="museo">
+            <span class="dot dot-museo"></span> Museos
+          </button>
+          <button class="filter-btn" data-filter="actividad">
+            <span class="dot dot-actividad"></span> Actividades
+          </button>
+        </div>
+
+        <input
+          type="text"
+          id="search"
+          placeholder="🔍 Buscar por nombre o distrito..."
+          class="search-input"
+        />
+      </div>
+
+      <div class="list-container">
+        <h3 id="list-count">Lugares</h3>
+        <ul id="lugares-list" class="lugares-list"></ul>
+      </div>
+    </aside>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Mobile toggle button -->
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Mostrar/ocultar lista">
+      📋
+    </button>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Hecho con ❤️ usando <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>
+      y <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>
+      · <a href="https://github.com" target="_blank" rel="noopener">Ver código en GitHub</a>
+    </p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Data -->
+  <script src="data.js"></script>
+
+  <!-- App -->
+  <script src="app.js"></script>
+</body>
+</html>

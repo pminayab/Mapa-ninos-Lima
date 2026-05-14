@@ -1,0 +1,334 @@
+/* ===== Reset & base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #2c3e50;
+  background: #f5f7fa;
+}
+
+/* ===== Colores categorías ===== */
+:root {
+  --color-parque: #27ae60;
+  --color-museo: #8e44ad;
+  --color-actividad: #e67e22;
+  --color-todos: #3498db;
+  --header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ===== Header ===== */
+.header {
+  background: var(--header-bg);
+  color: white;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  position: relative;
+}
+
+.header-inner h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.2rem;
+}
+
+/* ===== Layout ===== */
+.layout {
+  display: flex;
+  height: calc(100vh - 130px);
+  position: relative;
+}
+
+.sidebar {
+  width: 340px;
+  background: white;
+  border-right: 1px solid #e0e6ed;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+  z-index: 1;
+}
+
+/* ===== Filtros ===== */
+.filters {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e6ed;
+  background: #fafbfc;
+}
+
+.filters h2 {
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 0.75rem;
+}
+
+.filter-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid #e0e6ed;
+  background: white;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #2c3e50;
+}
+
+.filter-btn:hover {
+  border-color: #b0bec5;
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: #2c3e50;
+  color: white;
+  border-color: #2c3e50;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-todos { background: var(--color-todos); }
+.dot-parque { background: var(--color-parque); }
+.dot-museo { background: var(--color-museo); }
+.dot-actividad { background: var(--color-actividad); }
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #e0e6ed;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #667eea;
+}
+
+/* ===== Lista ===== */
+.list-container {
+  padding: 1rem;
+  flex: 1;
+}
+
+.list-container h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #7f8c8d;
+  margin-bottom: 0.75rem;
+}
+
+.lugares-list {
+  list-style: none;
+}
+
+.lugar-item {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border-left: 4px solid #e0e6ed;
+  background: #fafbfc;
+  transition: all 0.2s;
+}
+
+.lugar-item:hover {
+  background: #eef2f7;
+  transform: translateX(2px);
+}
+
+.lugar-item.parque { border-left-color: var(--color-parque); }
+.lugar-item.museo { border-left-color: var(--color-museo); }
+.lugar-item.actividad { border-left-color: var(--color-actividad); }
+
+.lugar-nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+  color: #2c3e50;
+}
+
+.lugar-direccion {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 0.3rem;
+}
+
+.lugar-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #95a5a6;
+}
+
+.lugar-rating {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+/* ===== Popups Leaflet ===== */
+.popup-content {
+  font-family: inherit;
+  min-width: 220px;
+}
+
+.popup-content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: #2c3e50;
+}
+
+.popup-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.popup-badge.parque { background: var(--color-parque); }
+.popup-badge.museo { background: var(--color-museo); }
+.popup-badge.actividad { background: var(--color-actividad); }
+
+.popup-content p {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.popup-info {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+.popup-info strong {
+  color: #2c3e50;
+}
+
+.popup-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #3498db;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.popup-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: #2c3e50;
+  color: #bdc3c7;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.footer a {
+  color: #74b9ff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Mobile toggle ===== */
+.mobile-toggle {
+  display: none;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header-inner h1 {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .layout {
+    height: calc(100vh - 110px);
+  }
+
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 320px;
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filter-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
