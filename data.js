@@ -24,6 +24,17 @@ const lugares = [
     horario: "Abierto 24h",
     precio: "Gratis"
   },
+    {
+    nombre: "Parque Infantil Inclusivo Brunito",
+    categoria: "parque",
+    lat: -12.0740583,
+    lng: -77.0688846,
+    direccion: "Parque El Carmen 1300, Pueblo Libre 15084",
+    rating: 4.4,
+    descripcion: "Parque infantil.",
+    horario: "Lun-Sáb 9am-6pm, Dom 8am-8pm",
+    precio: "Gratis"
+  },
   {
     nombre: "Niños Park",
     categoria: "parque",
