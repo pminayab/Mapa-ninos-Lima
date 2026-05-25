@@ -46,6 +46,17 @@ const lugares = [
     horario: "Lun-Dom 7am-9pm",
     precio: "Gratis"
   },
+      {
+    nombre: "Parque Abtao",
+    categoria: "parque",
+    lat: -12.0940854,
+    lng: -77.0293575,
+    direccion: "C. las Camelias 290, San Isidro 15046",
+    rating: 4.4,
+    descripcion: "Compact & leafy space with play areas & a memorial to 19th-century war hero, Manuel Villar Olivera.",
+    horario: "Abierto 24 horas",
+    precio: "Gratis"
+  },
   {
     nombre: "Anillos Park",
     categoria: "parque",
