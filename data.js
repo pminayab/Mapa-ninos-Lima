@@ -35,6 +35,17 @@ const lugares = [
     horario: "Mar-Sáb 10am-8pm, Dom 9:30am-8pm",
     precio: "Entrada con costo"
   },
+    {
+    nombre: "Parque Bicentenario",
+    categoria: "parque",
+    lat: -12.1081866,
+    lng: -77.0552971,
+    direccion: "C. Godofredo García 495, San Isidro 15076",
+    rating: 4.6,
+    descripcion: "Paths, shelters & a playground, plus busts of historic figures, in a hilltop park with sea views.",
+    horario: "Lun-Dom 7am-9pm",
+    precio: "Gratis"
+  },
   {
     nombre: "Anillos Park",
     categoria: "parque",
